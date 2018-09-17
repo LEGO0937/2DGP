@@ -68,7 +68,19 @@ def go_point4_to_point5():
         get_events()
 
 def go_point5_to_point6():
-    pass
+    x, y = 715, 136
+    frame = 0
+    direction = 0
+    while x > 316 and y < 225:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.clip_draw(frame * 100, direction, 100, 100, x, y)
+        update_canvas()
+        frame = (frame + 1) % 8
+        x -= 13
+        y += 3
+        delay(0.1)
+        get_events()
 def go_point6_to_point7():
     pass
 def go_point7_to_point8():
@@ -85,8 +97,8 @@ while True:
     #go_point1_to_point2()
     #go_point2_to_point3()
     #go_point3_to_point4()
-    go_point4_to_point5()
-    go_point5_to_point6()
+    #go_point4_to_point5()
+    #go_point5_to_point6()
     go_point6_to_point7()
     go_point7_to_point8()
     go_point8_to_point9()
