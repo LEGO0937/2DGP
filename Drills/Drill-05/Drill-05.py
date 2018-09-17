@@ -6,8 +6,20 @@ grass = load_image('grass.png')
 character = load_image('character.png')
 
 
-#fill here
+def make_rectangle():
 
+    pass
+
+def make_circle():
+
+    pass
+
+
+while True:
+    make_rectangle()
+    make_circle()
+
+#함수의 이름의 시작은 항상 동사(verb)로 한다
 
 
 #아랫줄로 개행할 때 Shift+Enter키를 누르면 문장 중간에서 바로 개행된다
