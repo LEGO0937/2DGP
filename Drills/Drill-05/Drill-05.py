@@ -11,7 +11,7 @@ character = load_image('animation_sheet.png')
 def go_point1_to_point2():
     x, y = 203, 535
     frame = 0
-    direction = 100
+    direction = 0
     while x > 132 and y > 243:
         clear_canvas_now()
         grass.draw_now(400, 30)
@@ -39,7 +39,19 @@ def go_point2_to_point3():
         get_events()
 
 def go_point3_to_point4():
-    pass
+    x, y =  535, 470
+    frame = 0
+    direction = 0
+    while x > 477 and y > 203:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.clip_draw(frame * 100, direction, 100, 100, x, y)
+        update_canvas()
+        frame = (frame + 1) % 8
+        x -= 3
+        y -= 13
+        delay(0.1)
+        get_events()
 def go_point4_to_point5():
     pass
 def go_point5_to_point6():
@@ -58,7 +70,7 @@ def go_point10_to_point1():
 
 while True:
     #go_point1_to_point2()
-    go_point2_to_point3()
+    #go_point2_to_point3()
     go_point3_to_point4()
     go_point4_to_point5()
     go_point5_to_point6()
