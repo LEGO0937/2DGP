@@ -53,10 +53,10 @@ def move_from_left_to_center():
 
 
 def make_rectangle():
-    #move_from_center_to_right()
-    #move_up()
-    #move_left()
-    #move_down()
+    move_from_center_to_right()
+    move_up()
+    move_left()
+    move_down()
     move_from_left_to_center()
 
 import math
@@ -76,7 +76,7 @@ def make_circle():
 
 
 while True:
-    #make_rectangle()
+    make_rectangle()
     make_circle()
 
 #함수의 이름의 시작은 항상 동사(verb)로 한다
