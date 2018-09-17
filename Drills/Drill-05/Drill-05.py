@@ -97,10 +97,33 @@ def go_point6_to_point7():
         get_events()
 
 def go_point7_to_point8():
-
-    pass
+    x, y = 510, 92
+    frame = 0
+    direction = 100
+    while x < 692 and y < 518:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.clip_draw(frame * 100, direction, 100, 100, x, y)
+        update_canvas()
+        frame = (frame + 1) % 8
+        x += 4
+        y += 10
+        delay(0.1)
+        get_events()
 def go_point8_to_point9():
-    pass
+    x, y = 692, 518
+    frame = 0
+    direction = 0
+    while x > 682 and y > 336:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.clip_draw(frame * 100, direction, 100, 100, x, y)
+        update_canvas()
+        frame = (frame + 1) % 8
+        x -= 1
+        y -= 18
+        delay(0.1)
+        get_events()
 def go_point9_to_point10():
     pass
 def go_point10_to_point1():
@@ -113,8 +136,8 @@ while True:
     #go_point3_to_point4()
     #go_point4_to_point5()
     #go_point5_to_point6()
-    go_point6_to_point7()
-    go_point7_to_point8()
+    #go_point6_to_point7()
+    #go_point7_to_point8()
     go_point8_to_point9()
     go_point9_to_point10()
     go_point10_to_point1()
