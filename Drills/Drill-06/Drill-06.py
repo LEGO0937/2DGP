@@ -3,6 +3,9 @@ from pico2d import *
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
 
+def go_to_mouse_point(clickX, clickY):
+    pass
+
 def handle_events():
     global running
     global x, y
@@ -21,6 +24,7 @@ def handle_events():
 
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
+mouse = load_image('hand_arrow.png')
 kpu_ground = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
 
