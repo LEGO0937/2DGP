@@ -59,7 +59,7 @@ while running:
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     if stop_or_go == True or stop_or_go == False:
         go_to_mouse_point(click_x, click_y)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, char_x, char_y)
+    character.clip_draw(frame * 100, direction, 100, 100, char_x, char_y)
     mouse.draw(x + 26, y - 26)
     update_canvas()
     frame = (frame + 1) % 8
