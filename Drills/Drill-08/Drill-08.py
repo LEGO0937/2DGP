@@ -4,7 +4,14 @@ import random
 KPU_WIDTH, KPU_HEIGHT = 1280, 800
 
 
-
+def move_char(point):
+    global frame
+    clear_canvas()
+    kpu.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
+    character.clip_draw(frame * 100, direction, 100, 100, point[0], point[1])
+    update_canvas()
+    frame = (frame + 1) % 8
+    delay(0.03)
 
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
