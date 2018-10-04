@@ -14,6 +14,9 @@ def move_char(point):
     delay(0.03)
 
 
+def curve_char(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+    pass
+
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
