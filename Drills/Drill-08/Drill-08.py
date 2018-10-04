@@ -30,16 +30,26 @@ def go_point_to_point(p1, p2, p3, p4):
 
 
 def curve_char(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
-    go_point_to_point(p10, p1, p2, p3)  # 점 1부터 2까지
-    go_point_to_point(p1, p2, p3, p4)  # 점 2부터 3까지
-    go_point_to_point(p2, p3, p4, p5)  # 점 3부터 4까지
-    go_point_to_point(p3, p4, p5, p6)  # 점 4부터 5까지
-    go_point_to_point(p4, p5, p6, p7)  # 점 5부터 6까지
-    go_point_to_point(p5, p6, p7, p8)  # 점 6부터 7까지
-    go_point_to_point(p6, p7, p8, p9)  # 점 7부터 8까지
-    go_point_to_point(p7, p8, p9, p10)  # 점 8부터 9까지
-    go_point_to_point(p8, p9, p10, p1)  # 점 9부터 10까지
-    go_point_to_point(p9, p10, p1, p2)  # 점 10부터 1까지
+    # 점 1부터 2까지
+    go_point_to_point(p10, p1, p2, p3)
+    # 점 2부터 3까지
+    go_point_to_point(p1, p2, p3, p4)
+    # 점 3부터 4까지
+    go_point_to_point(p2, p3, p4, p5)
+    # 점 4부터 5까지
+    go_point_to_point(p3, p4, p5, p6)
+    # 점 5부터 6까지
+    go_point_to_point(p4, p5, p6, p7)
+    # 점 6부터 7까지
+    go_point_to_point(p5, p6, p7, p8)
+    # 점 7부터 8까지
+    go_point_to_point(p6, p7, p8, p9)
+    # 점 8부터 9까지
+    go_point_to_point(p7, p8, p9, p10)
+    # 점 9부터 10까지
+    go_point_to_point(p8, p9, p10, p1)
+    # 점 10부터 1까지
+    go_point_to_point(p9, p10, p1, p2)
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu = load_image('KPU_GROUND.png')
