@@ -22,14 +22,11 @@ def go_point_to_point(p1, p2, p3, p4):
     elif p2[0] > p3[0]:
         direction = 0
 
-    while True:
-        t = i / 100
+    for i in range(0, 100, 2):
+        t = i/100
         Char_X = ((-t**3 + 2*t**2 - t)*p1[0] + (3*t**3 - 5*t**2 + 2)*p2[0] + (-3*t**3 + 4*t**2 + t)*p3[0] + (t**3 - t**2)*p4[0])/2
         Char_Y = ((-t**3 + 2*t**2 - t)*p1[1] + (3*t**3 - 5*t**2 + 2)*p2[1] + (-3*t**3 + 4*t**2 + t)*p3[1] + (t**3 - t**2)*p4[1])/2
         move_char((Char_X, Char_Y))
-        i = i + 2
-        if 100 == i:
-            break
 
 
 def curve_char(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
