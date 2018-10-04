@@ -33,7 +33,7 @@ def go_point_to_point(p1, p2, p3, p4):
 
 
 def curve_char(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
-    pass
+    go_point_to_point(p10, p1, p2, p3)  # 점 1부터 2까지
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu = load_image('KPU_GROUND.png')
