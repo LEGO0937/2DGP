@@ -13,6 +13,9 @@ def move_char(point):
     frame = (frame + 1) % 8
     delay(0.03)
 
+def go_point_to_point(p1, p2, p3, p4):
+    pass
+
 
 def curve_char(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
     pass
