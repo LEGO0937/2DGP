@@ -22,7 +22,22 @@ class Boy:
         self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
 
 class Ball:
-    pass
+    def __init__(self):
+        self.x, self.y = random.randint(50, 700), 500
+        self.size = random.randint(0, 1)
+        if self.size == 0:
+            self.image = load_image('ball21x21.png')
+        else:
+            self.image = load_image('ball41x41.png')
+
+    def update(self):
+        pass
+
+    def draw(self):
+        if self.size == 0:
+            self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
+        else:
+            self.image.clip_draw(0, 0, 41, 41, self.x, self.y)
 
 def handle_events():
     global running
@@ -33,8 +48,29 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
-# initialization code
+open_canvas()
 
-# game main loop code
+team = [Boy() for i in range(11)]
+balls = [Ball() for i in range(20)]
+grass = Grass()
 
-# finalization code
+running = True;
+
+while running:
+    handle_events()
+
+    for boy in team:
+        boy.update()
+    for ball in balls:
+        ball.update()
+    clear_canvas()
+    grass.draw()
+    for boy in team:
+        boy.draw()
+    for ball in balls:
+        ball.draw()
+    update_canvas()
+
+    delay(0.02)
+
+close_canvas()
