@@ -37,11 +37,14 @@ def handle_events():
 def draw():
     global frame
     global button
+    global cnt
     clear_canvas()
     main_state.boy.draw()
     main_state.grass.draw()
     if button == 0:
-        frame = (frame + 1) % 8
+        cnt += 1
+        if cnt % 10 == 0:
+            frame = (frame + 1) % 2
         image.clip_draw(frame * 512, 0, 512, 512, 400, 300)
     elif button == 1:
         frame = 0
@@ -67,7 +70,7 @@ def resume():
 
 frame = 0
 button = 0
-
+cnt = 0
 
 
 
