@@ -72,5 +72,6 @@ frame = 0
 button = 0
 cnt = 0
 
+#완성
 
 
