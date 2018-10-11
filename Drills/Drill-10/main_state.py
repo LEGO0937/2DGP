@@ -62,9 +62,9 @@ def pause():
 
 def resume():
     if boy.x >= 800:
-        boy.dir = -5
+        boy.dir = -3
     elif boy.x <= 0:
-        boy.dir = 5
+        boy.dir = 3
 
 
 def handle_events():
