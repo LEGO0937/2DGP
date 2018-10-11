@@ -31,11 +31,21 @@ def handle_events():
                 game_framework.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_s) or (event.type, event.key) == (SDL_KEYDOWN, SDLK_p):
                 game_framework.pop_state()
+                main_state.resume()
 
 
 def draw():
+    global frame
+    global button
     clear_canvas()
-    image.draw(400, 300)
+    main_state.boy.draw()
+    main_state.grass.draw()
+    if button == 0:
+        frame = (frame + 1) % 8
+        image.clip_draw(frame * 512, 0, 512, 512, 400, 300)
+    elif button == 1:
+        frame = 0
+        image.clip_draw(frame * 512, 0, 800, 600, 400, 300)
     update_canvas()
 
 
@@ -55,7 +65,8 @@ def pause():
 def resume():
     pass
 
-
+frame = 0
+button = 0
 
 
 

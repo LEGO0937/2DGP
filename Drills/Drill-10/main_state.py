@@ -62,9 +62,9 @@ def pause():
 
 def resume():
     if boy.x >= 800:
-        boy.dir = -1
+        boy.dir = -5
     elif boy.x <= 0:
-        boy.dir = 1
+        boy.dir = 5
 
 
 def handle_events():
@@ -76,6 +76,12 @@ def handle_events():
             game_framework.change_state(title_state)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             pause()
+            pause_state.button = 1
+            game_framework.push_state(pause_state)
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_s:
+            pause()
+            pause_state.button = 0
+            game_framework.push_state(pause_state)
 
 
 
