@@ -159,6 +159,7 @@ class DashState:
         boy.frame = (boy.frame + 1) % 8
         boy.timer -= 1
         if boy.timer == 0:
+            print("Dash->Run")
             boy.add_event(RETURN_RUN)
         boy.x += boy.velocity * 10
         boy.x = clamp(25, boy.x, 1600 - 25)
@@ -191,8 +192,7 @@ class Boy:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
         self.speed = 0
-        #self.dash = 0
-        #추가
+
 
 
     def fire_ball(self):
