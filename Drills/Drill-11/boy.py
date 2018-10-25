@@ -17,8 +17,10 @@ key_event_table = {
     (SDL_KEYUP, SDLK_RIGHT): RIGHT_UP,
     (SDL_KEYUP, SDLK_LEFT): LEFT_UP,
     (SDL_KEYDOWN, SDLK_SPACE): SPACE,
-    (SDL_KEYDOWN, SDLK_LSHIFT or SDLK_RSHIFT): SHIFT_DOWN,
-    (SDL_KEYUP, SDLK_LSHIFT or SDLK_RSHIFT): SHIFT_UP
+    (SDL_KEYDOWN, SDLK_LSHIFT): SHIFT_DOWN,
+    (SDL_KEYDOWN, SDLK_RSHIFT): SHIFT_DOWN,
+    (SDL_KEYUP, SDLK_LSHIFT): SHIFT_UP,
+    (SDL_KEYUP, SDLK_RSHIFT): SHIFT_UP
 }
 
 
@@ -144,7 +146,7 @@ class DashState:
         elif event == LEFT_UP:
             boy.velocity += 1
         boy.dir = boy.velocity
-        boy.timer = 300
+        boy.timer = 100
 
     @staticmethod
     def exit(boy, event):
