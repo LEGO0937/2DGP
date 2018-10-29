@@ -125,7 +125,7 @@ class SleepState:
     @staticmethod
     def draw(boy):
         if boy.dir == 1:
-            boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
+            boy.image.clip_composite_draw(100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
             if boy.round_timer < 1:
                 boy.ghost_image.opacify(0.1 * random.randint(1, 9))
                 boy.ghost_image.clip_composite_draw(100, 300, 100, 100, (3.141592 - (boy.round_timer * 3.141592)) / 2, '', boy.x - (25 - (boy.round_timer * 25)), boy.y - (25 - (boy.round_timer * 25)), 100, 100)
@@ -134,7 +134,7 @@ class SleepState:
                 boy.ghost_image.clip_draw(int(boy.frame) * 100, 300, 100, 100, boy.radian * math.cos(
                     math.radians(270 + (DEGREE_PER_SECOND * boy.round_timer))) + boy.x, 100 * math.sin(math.radians(270 + (DEGREE_PER_SECOND * boy.round_timer))) + boy.y * 2)
         else:
-            boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
+            boy.image.clip_composite_draw(100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
             if boy.round_timer < 1:
                 boy.ghost_image.opacify(0.1 * random.randint(1, 9))
                 boy.ghost_image.clip_composite_draw(100, 200, 100, 100, (-3.141592 + (boy.round_timer * 3.141592)) / 2, '', boy.x + (25 - (boy.round_timer * 25)), boy.y - (25 - (boy.round_timer * 25)), 100, 100)
