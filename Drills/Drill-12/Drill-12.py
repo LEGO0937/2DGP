@@ -60,7 +60,7 @@ class IdleState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-        if get_time() - boy.timer >= 10
+        if get_time() - boy.timer >= 10:
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
@@ -109,6 +109,9 @@ class SleepState:
     @staticmethod
     def enter(boy, event):
         boy.frame = 0
+        boy.radian = PIXEL_PER_METER * 3
+        boy.ghost_phase = get_time()
+        boy.round_timer = 0
 
     @staticmethod
     def exit(boy, event):
@@ -117,11 +120,15 @@ class SleepState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
+        boy.round_timer = get_time() - boy.ghost_phase
 
     @staticmethod
     def draw(boy):
         if boy.dir == 1:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
+            if boy.round_timer < 1:
+                boy.ghost_image.opacify(0.1 * random.randint(1, 9))
+                boy.ghost_image.clip_composite_draw(100, 300, 100, 100, (3.141592 - (boy.round_timer * 3.141592)) / 2, '', boy.x - (25 - (boy.round_timer * 25)), boy.y - (25 - (boy.round_timer * 25)), 100, 100)
         else:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
 
@@ -140,7 +147,6 @@ class Boy:
 
     def __init__(self):
         self.x, self.y = 1600 // 2, 90
-        # Boy is only once created, so instance image loading is fine
         self.image = load_image('animation_sheet.png')
         self.font = load_font('ENCR10B.TTF', 16)
         self.dir = 1
