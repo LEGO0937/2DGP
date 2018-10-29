@@ -6,7 +6,7 @@ from pico2d import *
 import game_framework
 import game_world
 
-from boy import Boy
+from Drill12 import Boy
 from grass import Grass
 
 

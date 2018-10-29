@@ -165,6 +165,7 @@ class Boy:
         self.event_que = []
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
+        self.ghost_image = load_image('animation_sheet.png')
 
 
     def fire_ball(self):
