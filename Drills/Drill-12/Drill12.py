@@ -193,5 +193,3 @@ class Boy:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
 
-
-#완성
