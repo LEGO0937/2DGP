@@ -1,16 +1,19 @@
 import game_framework
 from pico2d import *
 from ball import Ball
+import random
+import math
 
 import game_world
 
+
 # Boy Run Speed
-# fill expressions correctly
 PIXEL_PER_METER = (10.0 / 0.3)
 RUN_SPEED_KMPH = 20.0
 RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
 RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
 RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
+DREGREE_PER_SECOND = 360
 
 # Boy Action Speed
 # fill expressions correctly
@@ -46,7 +49,7 @@ class IdleState:
             boy.velocity -= RUN_SPEED_PPS
         elif event == LEFT_UP:
             boy.velocity += RUN_SPEED_PPS
-        boy.timer = 1000
+        boy.timer = get_time()
 
     @staticmethod
     def exit(boy, event):
@@ -57,8 +60,7 @@ class IdleState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-        boy.timer -= 1
-        if boy.timer == 0:
+        if get_time() - boy.timer >= 10
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
