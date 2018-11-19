@@ -71,8 +71,10 @@ class WalkingState:
 
         #boy.x = clamp(boy.canvas_width // 2, boy.x, boy.bg.w - boy.canvas_width // 2)
         #boy.y = clamp(boy.canvas_height // 2, boy.y, boy.bg.h - boy.canvas_height // 2)
-        boy.x = clamp(0, boy.x, boy.bg.w)
-        boy.y = clamp(0, boy.y, boy.bg.h)
+        boy.x = clamp(0 + (boy.y / 5), boy.x, boy.bg.w - (boy.y / 5))
+        boy.y = clamp(0 + 70, boy.y, boy.bg.h - 40)
+
+
 
     @staticmethod
     def draw(boy):
